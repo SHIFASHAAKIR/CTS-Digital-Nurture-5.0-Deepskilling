@@ -1,0 +1,38 @@
+<section class="home">
+  <h1>{{ portalName }}</h1>
+  <p class="description">
+    Welcome to your Student Course Portal — browse available courses,
+    track your enrollments, and manage your academic profile all in one place.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-value">{{ coursesAvailable }}</span>
+      <span class="stat-label">Courses Available</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">{{ enrolledCount }}</span>
+      <span class="stat-label">Enrolled</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">{{ gpa }}</span>
+      <span class="stat-label">GPA</span>
+    </div>
+  </div>
+
+  <div class="binding-demo">
+    <h2>Binding Demo</h2>
+
+    <!-- Property binding: [disabled] -->
+    <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+    <p *ngIf="message">{{ message }}</p>
+
+    <!-- Two-way binding: [(ngModel)] -->
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search courses..."
+    />
+    <p>Searching for: {{ searchTerm }}</p>
+  </div>
+</section>

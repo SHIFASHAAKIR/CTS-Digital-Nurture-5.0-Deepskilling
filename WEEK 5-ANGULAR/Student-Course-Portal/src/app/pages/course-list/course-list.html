@@ -1,0 +1,24 @@
+<section class="course-list">
+  <h2>Available Courses</h2>
+
+  <!-- HANDS-ON 3 - Task 1, Step 25: *ngIf / else loading indicator -->
+  <p *ngIf="isLoading; else courseGrid">Loading courses...</p>
+
+  <ng-template #courseGrid>
+    <!-- HANDS-ON 3 - Task 1, Step 28: *ngIf with else for the empty-state -->
+    <div *ngIf="courses.length > 0; else noCourses">
+      <app-course-card
+        *ngFor="let course of courses; let i = index; trackBy: trackByCourseId"
+        [course]="course"
+        (enrollRequested)="onEnroll($event)"
+      ></app-course-card>
+    </div>
+    <ng-template #noCourses>
+      <p>No courses available.</p>
+    </ng-template>
+  </ng-template>
+
+  <p *ngIf="selectedCourseId" class="selected">
+    Selected course ID: {{ selectedCourseId }}
+  </p>
+</section>
