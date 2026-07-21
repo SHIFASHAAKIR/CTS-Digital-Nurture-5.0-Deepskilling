@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class StudentProfile {
   studentName = 'SHIFA A';
   studentId = 'DN5-2026-020';
-  gpa = 8.84;
+  gpa = 8.78;
 }
