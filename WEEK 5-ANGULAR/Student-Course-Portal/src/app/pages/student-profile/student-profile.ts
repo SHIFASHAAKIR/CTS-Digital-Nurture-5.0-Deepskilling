@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './student-profile.css',
 })
 export class StudentProfile {
-  studentName = 'GUNAL s';
+  studentName = 'SHIFA A';
   studentId = 'DN5-2026-014';
   gpa = 8.84;
 }
