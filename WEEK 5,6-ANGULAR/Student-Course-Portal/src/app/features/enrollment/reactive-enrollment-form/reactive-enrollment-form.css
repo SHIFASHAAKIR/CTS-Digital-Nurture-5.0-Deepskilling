@@ -1,0 +1,243 @@
+.enrollment-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.enrollment-section h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 1.75rem;
+}
+
+.description {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.required-indicator {
+  color: #dc2626;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #f9fafb;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background-color: #ffffff;
+}
+
+/* Hands-on requirement: ng-invalid/ng-valid with ng-touched */
+.ng-invalid.ng-touched {
+  border-color: red !important;
+  background-color: #fef2f2 !important;
+}
+
+.ng-valid.ng-touched {
+  border-color: green !important;
+  background-color: #f0fdf4 !important;
+}
+
+/* Checkbox specific styling */
+.checkbox-group {
+  margin-bottom: 24px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  margin-bottom: 0 !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Error and Pending message styling */
+.error-container {
+  min-height: 20px;
+  margin-top: 4px;
+}
+
+.error-msg {
+  color: #dc2626;
+  font-size: 0.825rem;
+  display: block;
+}
+
+.pending-msg {
+  color: #2563eb;
+  font-size: 0.825rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Success Alert */
+.success-message {
+  background-color: #d1fae5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Form Array (Dynamic controls) styling */
+.form-array-group {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+  margin-top: 24px;
+}
+
+.array-label {
+  font-size: 1rem !important;
+  margin-bottom: 12px !important;
+}
+
+.additional-courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-array-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.array-input {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.array-error-container {
+  width: 100%;
+  margin-top: 2px;
+  min-height: 16px;
+}
+
+.btn-remove {
+  background-color: #ef4444;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-remove:hover {
+  background-color: #dc2626;
+}
+
+.btn-add-course {
+  align-self: flex-start;
+  background-color: #10b981;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  margin-top: 8px;
+}
+
+.btn-add-course:hover {
+  background-color: #059669;
+}
+
+/* Action buttons */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.btn-submit {
+  background-color: #2563eb;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-submit:disabled {
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-reset {
+  background-color: #e5e7eb;
+  color: #374151;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.btn-reset:hover {
+  background-color: #d1d5db;
+}

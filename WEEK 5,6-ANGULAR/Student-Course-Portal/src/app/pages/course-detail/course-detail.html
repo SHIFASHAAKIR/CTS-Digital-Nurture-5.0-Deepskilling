@@ -1,0 +1,43 @@
+<section class="course-detail-section" *ngIf="course; else notFoundCourse">
+  <div class="detail-header">
+    <h2>{{ course.name }}</h2>
+    <span class="detail-code">{{ course.code }}</span>
+  </div>
+
+  <div class="detail-body">
+    <p><strong>Course ID:</strong> {{ course.id }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+    <p><strong>Grade Status:</strong> 
+      <span class="badge" [ngClass]="'badge--' + course.gradeStatus">
+        {{ course.gradeStatus | titlecase }}
+      </span>
+    </p>
+    <p><strong>Enrollment Status:</strong> {{ isEnrolled ? 'Enrolled' : 'Not Enrolled' }}</p>
+  </div>
+
+  <!-- Enrolled Students List (Step 87) -->
+  <div class="enrolled-students-section" style="margin-top: 24px; padding-top: 16px; border-top: 1px dashed #e5e7eb;">
+    <h4 style="margin: 0 0 10px 0; color: #374151;">Enrolled Students</h4>
+    <ul *ngIf="enrolledStudents.length > 0; else noStudents" style="margin: 0; padding-left: 20px; color: #4b5563;">
+      <li *ngFor="let s of enrolledStudents">{{ s.studentName }}</li>
+    </ul>
+    <ng-template #noStudents>
+      <p style="margin: 0; color: #9ca3af; font-style: italic; font-size: 0.9rem;">No students enrolled yet.</p>
+    </ng-template>
+  </div>
+
+  <div class="detail-actions">
+    <button (click)="toggleEnrollment()" class="btn btn-toggle" [ngClass]="isEnrolled ? 'btn-unenroll' : 'btn-enroll'">
+      {{ isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+    <button (click)="goBack()" class="btn btn-back">Back to Courses</button>
+  </div>
+</section>
+
+<ng-template #notFoundCourse>
+  <section class="course-detail-section not-found-card">
+    <h2>Course Not Found</h2>
+    <p>The requested Course ID is invalid or does not exist.</p>
+    <button (click)="goBack()" class="btn btn-back">Back to Courses</button>
+  </section>
+</ng-template>

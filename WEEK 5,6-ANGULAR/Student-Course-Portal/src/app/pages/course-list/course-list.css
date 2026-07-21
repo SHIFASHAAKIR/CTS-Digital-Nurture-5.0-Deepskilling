@@ -1,0 +1,6 @@
+.course-list h2 { margin-bottom: 16px; }
+.selected {
+  margin-top: 16px;
+  font-weight: 600;
+  color: #0cd38a;
+}

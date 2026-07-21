@@ -1,0 +1,37 @@
+<section class="profile">
+  <h2>Student Profile</h2>
+  <p><strong>Name:</strong> {{ studentName }}</p>
+  <p><strong>Student ID:</strong> {{ studentId }}</p>
+  <p><strong>GPA:</strong> {{ gpa }}</p>
+
+  <div class="enrolled-courses-section">
+    <h3>My Enrolled Courses</h3>
+    <ng-container *ngIf="enrolledCourses$ | async as enrolledCourses">
+      <div *ngIf="enrolledCourses.length > 0; else noEnrolled">
+        <ul class="enrolled-list">
+          <li *ngFor="let course of enrolledCourses" class="enrolled-item">
+            <span class="course-code">{{ course.code }}</span> - 
+            <span class="course-name">{{ course.name }}</span> 
+            <span class="course-credits">({{ course.credits }} Credits)</span>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+    <ng-template #noEnrolled>
+      <p class="no-courses">You are not enrolled in any courses yet.</p>
+    </ng-template>
+  </div>
+
+  <!-- Notification Service Scoping Demo using Hierarchical DI -->
+  <div class="notification-demo-section" style="margin-top: 32px; border-top: 2px solid #e5e7eb; padding-top: 20px;">
+    <h3>Notification Scoping Demo</h3>
+    <p class="no-courses" style="margin-bottom: 16px; font-style: normal; font-size: 0.9rem;">
+      Each widget below provides a component-level <code>NotificationService</code>.
+      Triggering logs in one does not affect the other, showing they have separate isolated instances.
+    </p>
+    <div class="notification-widgets-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <app-notification></app-notification>
+      <app-notification></app-notification>
+    </div>
+  </div>
+</section>
